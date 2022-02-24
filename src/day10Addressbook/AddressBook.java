@@ -1,7 +1,14 @@
 package day10Addressbook;
 
 /*
- * Ability to add multiple person to Address Book
+ * Refactor to add multipleAddress Book to the System. Each AddressBoo khas a unique Name
+ */
+
+/*
+ * ArrayList in Java is used to store dynamically sized collection of elements. 
+ * Contrary to Arrays that are fixed in size, an ArrayList grows its size automatically
+ *  when new elements are added to it.
+ *  An ArrayList is a re-sizable array, also called a dynamic array.
  */
 import java.util.ArrayList;
 import java.util.ListIterator;
@@ -10,7 +17,13 @@ import java.util.Scanner;
 public class AddressBook {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the address book system");
+		
 		ArrayList<Contacts> array = new ArrayList<Contacts>();
+		
+		/*
+		 * The try statement allows us to define a block of code to be tested for errors 
+		 * while it is being executed
+		 */
 		try (Scanner sc = new Scanner(System.in)) {
 			try (Scanner sc1 = new Scanner(System.in)) {
 				int choice;
@@ -42,7 +55,7 @@ public class AddressBook {
 								email);
 						array.add(contact);
 						break;
-
+						
 					// To Display Contact
 					case 2:
 						java.util.Iterator<Contacts> iterator = array.iterator();
@@ -51,7 +64,7 @@ public class AddressBook {
 							System.out.println(array);
 							break;
 						}
-
+						
 						// To Edit Contact
 					case 3:
 						boolean found = false;
@@ -60,10 +73,10 @@ public class AddressBook {
 						System.out.println("------------------------------------");
 
 						ListIterator<Contacts> listIterator = array.listIterator();
-
+						
 						while (listIterator.hasNext()) {
 							contact = listIterator.next();
-
+							
 							if (contact.getFirstName().equals(firstName1)) {
 
 								System.out.print("Enter new first Name: ");
@@ -87,6 +100,7 @@ public class AddressBook {
 								found = true;
 							}
 						}
+						
 						System.out.println("_____________________________________");
 
 						if (!found) {
@@ -96,6 +110,7 @@ public class AddressBook {
 						}
 						System.out.println("_______________________________________");
 						break;
+						
 					// To Delete Contact
 					case 4:
 						found = false;
@@ -103,13 +118,16 @@ public class AddressBook {
 						firstName1 = sc1.nextLine();
 						System.out.println("____________________________________");
 						iterator = array.iterator();
+						
 						while (iterator.hasNext()) {
 							contact = iterator.next();
+							
 							if (contact.getFirstName().equals(firstName1)) {
 								iterator.remove();
 								found = true;
 							}
 						}
+						
 						System.out.println("____________________________________");
 						if (!found) {
 							System.out.println("Record not found");
@@ -129,3 +147,5 @@ public class AddressBook {
 		}
 	}
 }
+	
+
