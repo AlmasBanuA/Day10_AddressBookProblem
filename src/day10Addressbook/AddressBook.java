@@ -1,14 +1,13 @@
 package day10Addressbook;
 
 /*
- * Ability to delete a person using person's name
+ * Ability to add multiple person to Address Book
  */
 import java.util.ArrayList;
 import java.util.ListIterator;
 import java.util.Scanner;
 
 public class AddressBook {
-
 	public static void main(String[] args) {
 		System.out.println("Welcome to the address book system");
 		ArrayList<Contacts> array = new ArrayList<Contacts>();
@@ -43,7 +42,7 @@ public class AddressBook {
 								email);
 						array.add(contact);
 						break;
-						
+
 					// To Display Contact
 					case 2:
 						java.util.Iterator<Contacts> iterator = array.iterator();
@@ -51,8 +50,8 @@ public class AddressBook {
 							contact = iterator.next();
 							System.out.println(array);
 							break;
-							
 						}
+
 						// To Edit Contact
 					case 3:
 						boolean found = false;
@@ -61,19 +60,10 @@ public class AddressBook {
 						System.out.println("------------------------------------");
 
 						ListIterator<Contacts> listIterator = array.listIterator();
-						
-						/*
-						 * It is a java iterator which is used to traverse all types of lists including
-						 * ArrayList, Vector, LinkedList, Stack
-						 */
 
 						while (listIterator.hasNext()) {
 							contact = listIterator.next();
-							
-							/*
-							 * Entering the condition if firstname matches
-							 */
-							
+
 							if (contact.getFirstName().equals(firstName1)) {
 
 								System.out.print("Enter new first Name: ");
