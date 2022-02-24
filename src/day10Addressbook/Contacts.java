@@ -10,14 +10,14 @@ public class Contacts {
 	private String address;
 	private String city;
 	private String state;
-	private String zip;
+	private int zip;
 	private String phoneNumber;
 	private String email;
 
 	/*
 	 * taking parameterized constructor to pass the values of contacts
 	 */
-	public Contacts(String firstName, String lastName, String address, String city, String state, String zip,
+	public Contacts(String firstName, String lastName, String address, String city, String state, int zip,
 			String phoneNumber, String email) {
 		super();
 
@@ -78,11 +78,11 @@ public class Contacts {
 		this.state = state;
 	}
 
-	public String getZip() {
+	public int getZip() {
 		return zip;
 	}
 
-	public void setZip(String zip) {
+	public void setZip(int zip) {
 		this.zip = zip;
 	}
 
@@ -103,3 +103,4 @@ public class Contacts {
 	}
 
 }
+
